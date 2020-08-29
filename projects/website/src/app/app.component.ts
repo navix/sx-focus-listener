@@ -6,28 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  code = {
-    demo1: `<p style="height: 500px;">Some intro content.</p>
-<img #el
-     alt="lazy image"
-     data-lazy-src="/assets/image.png"
-     ngxIntersection
-     (appear)="el.attr.src=el.data.lazy-src">`,
-  };
-
-  title = 'website';
-
-  targetIntersected = false;
-
-  targetIntersected2 = false;
-
-  targetIntersected3 = false;
-
-  alert(msg: any) {
-    console.log('alrt', msg);
-  }
-
-  isVisible(d: any) {
-    console.log('APPEARED!', d);
-  }
+  code = `<div #group="sxFocusGroup" sxFocusGroup>
+  <h4>Group focused: {{ group.focusListener.focused | json }}</h4>
+  <button sxFocusEl>In group!</button>
+  <button sxFocusEl>In group!</button>
+  <button sxFocusEl>In group!</button>
+  <button>Out of group</button>
+</div>
+<div>
+  <h4>Manual registration in group.</h4>
+  <button [focusListener]="group.focusListener" sxFocusEl>Button in group!</button>
+  <button>Out of group</button>
+</div>`;
 }

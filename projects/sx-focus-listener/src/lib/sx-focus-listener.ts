@@ -11,13 +11,13 @@ import { Observable, Subject } from 'rxjs';
  */
 @Injectable()
 export class SxFocusListener {
-  private _focused = false;
+  #focused = false;
 
-  private readonly _focus = new Subject<any>();
+  readonly #focus = new Subject<any>();
 
-  private readonly _focusWithin = new Subject<any>();
+  readonly #focusWithin = new Subject<any>();
 
-  private readonly _blur = new Subject<any>();
+  readonly #blur = new Subject<any>();
 
   private elements: {
     el: HTMLElement;
@@ -32,38 +32,38 @@ export class SxFocusListener {
    * Emits, if user focuses one of registered element.
    */
   get focus(): Observable<any> {
-    return this._focus.asObservable();
+    return this.#focus.asObservable();
   }
 
   /**
    * Emits, if user focuses one of registered element or move focus among registered elements.
    */
   get focusWithin(): Observable<any> {
-    return this._focusWithin.asObservable();
+    return this.#focusWithin.asObservable();
   }
 
   /**
    * Emits, if focus leave one of registered element and target node is not one of registered element (or it's child).
    */
   get blur(): Observable<any> {
-    return this._blur.asObservable();
+    return this.#blur.asObservable();
   }
 
   /**
    * Is one of registered element focused now.
    */
   get focused(): boolean {
-    return this._focused;
+    return this.#focused;
   }
 
   add(el: HTMLElement) {
     this.elements.push({
-      el: el,
+      el,
       focus: this.em.addEventListener(el, 'focusin', (event: any) => {
-        this._focusWithin.next(event);
-        if (!this._focused) {
-          this._focused = true;
-          this._focus.next(event);
+        this.#focusWithin.next(event);
+        if (!this.#focused) {
+          this.#focused = true;
+          this.#focus.next(event);
         }
       }),
       blur: this.em.addEventListener(el, 'focusout', (event: any) => {
@@ -97,8 +97,8 @@ export class SxFocusListener {
       }
     });
     if (leave) {
-      this._focused = false;
-      this._blur.next(event);
+      this.#focused = false;
+      this.#blur.next(event);
     }
   }
 }

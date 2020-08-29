@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SxClassModule } from '../../../sx-class/src/lib/sx-class.module';
-
+import { SxFocusListenerModule } from '../../../sx-focus-listener/src/lib/sx-focus-listener.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
   imports: [
     BrowserModule,
-    SxClassModule,
+    SxFocusListenerModule,
+  ],
+  declarations: [
+    AppComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

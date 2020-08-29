@@ -2,13 +2,14 @@ import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
 import { SxFocusListener } from './sx-focus-listener';
 
 /**
- * Register `SxFocusListener` on element, but not the element itself (use `[sxFocusEl]` for that purpose).
+ * Creates `SxFocusListener` service, but not registers the element itself to the service (use `[sxFocusEl]` for that purpose).
  */
 @Directive({
   selector: '[sxFocusGroup]',
   providers: [
     SxFocusListener,
   ],
+  exportAs: 'sxFocusGroup'
 })
 export class SxFocusGroupDirective implements OnInit {
   @Output() groupFocus = new EventEmitter();
@@ -18,7 +19,7 @@ export class SxFocusGroupDirective implements OnInit {
   @Output() groupBlur = new EventEmitter();
 
   constructor(
-    private focusListener: SxFocusListener,
+    public focusListener: SxFocusListener,
   ) {
   }
 
