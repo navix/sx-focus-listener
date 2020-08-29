@@ -1,6 +1,9 @@
 {
   "name": "@oleksa/sx-focus-listener",
-  "version": "10.0.0-beta.1",
+  "version": "10.0.0-beta.2",
+  "repository": "https://github.com/navix/sx-focus-listener",
+  "author": "Oleksa Novyk (inavix@gmail.com)",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",

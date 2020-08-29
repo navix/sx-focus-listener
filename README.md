@@ -1,6 +1,8 @@
 # Focus listener service for Angular
 
-Handles focus/blur from a group of elements.
+Register element in the service and use focus/blur observables.
+
+Also handles focus/blur for a group of elements.
 
 If focus moves among elements in a defined group, blur event will not be fired.
 
@@ -33,7 +35,7 @@ $ npm i @oleksa/sx-focus-listener
 </div>
 ```
 
-### As service
+### As a service
 
 ```typescript
 ...
