@@ -1,8 +1,12 @@
-# Focus listener service for Angular
+[![npm version](https://badge.fury.io/js/%40oleksa%2Fsx-focus-listener.svg)](https://www.npmjs.com/@oleksa/sx-focus-listener)
+
+# sx-focus-listener
+
+### 🕸 Advanced focus listener for Angular
 
 Register element in the service and use focus/blur observables.
 
-Also handles focus/blur for a group of elements.
+The service handles focus/blur for one or a group of elements.
 
 If focus moves among elements in a defined group, blur event will not be fired.
 
@@ -58,3 +62,8 @@ export class MyComponent {
   this.focusListener.focus.subscribe((event: any) => {});
   this.focusListener.blur.subscribe((event: any) => {});
 ```
+
+
+## License
+
+MIT

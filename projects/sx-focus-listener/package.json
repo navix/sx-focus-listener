@@ -1,6 +1,6 @@
 {
   "name": "@oleksa/sx-focus-listener",
-  "version": "10.0.0-beta.2",
+  "version": "10.0.0",
   "repository": "https://github.com/navix/sx-focus-listener",
   "author": "Oleksa Novyk (inavix@gmail.com)",
   "license": "MIT",

@@ -2,9 +2,6 @@ import { Platform } from '@angular/cdk/platform';
 import { Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Optional } from '@angular/core';
 import { SxFocusListener } from './sx-focus-listener';
 
-/**
- * Register elementRef to parent `SxFocusListener`.
- */
 @Directive({
   selector: '[sxFocusEl]',
 })
